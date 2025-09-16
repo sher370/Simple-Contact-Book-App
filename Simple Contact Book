@@ -1,0 +1,29 @@
+contacts = {}
+
+while True:
+  print("\n---Contact Book!---\n")
+  print("1. Add Contact")
+  print("2. View Contact")
+  print("3. Exit")
+
+  choice = input("\nPlease choose (1-3) option: ")
+
+  if choice == "1":
+    name = input("Please enter name: ")
+    phone = input("Please enter phone number: ")
+    contacts[name] = phone
+    print(f"Contact: {name} has been added!")
+
+  elif choice == "2":
+    if contacts:
+      print("\n---Saved Contacts---\n")
+      for name, phone in contacts.items():
+        print(f"{name} : {phone}")
+    else:
+      print("\nNo contacts found.")
+
+  elif choice == "3":
+    print("Good Bye!")
+    break
+  else:
+    print("Wrong input")
